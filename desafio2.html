@@ -1,0 +1,50 @@
+<html>
+    //utlizando o resultado do primeiro desafio,
+    // toda vez que o usuario passar o mouse por cima de algum quadrado troque sua cor para uma cor aleatoria.
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Desafio 2</title>
+    </head>
+    <body>
+        <div id="app"> 
+        
+            <button class="botao">Adicionar</button>
+            <div class="quadrado"></div>
+        </div>    
+        
+        <script>
+             function getRandomColor() { //funçao que gera cores aleatorias
+                            var letters = "0123456789ABCDEF";
+                            var color = "#";
+                            for (var i = 0; i < 6; i++) {
+                            color += letters[Math.floor(Math.random() * 16)];
+                            }
+                            return color;
+                        }
+
+
+           var btnElement = document.querySelector('button.botao'); //busca o elemento que vai fazer açao
+           var containerElement = document.querySelector('.quadrado');   //busca o elemento onde vai ser criado os quadrados
+           
+            
+            
+            btnElement.onclick = function(){   //cria uma função de ação para quando apertar o botão
+                var square = document.createElement('div');// cria uma div e atribui ela dentro da variavel 'square'
+                square.style.width = 100; //passa as caracteristicas de estilo da variavel
+                square.style.height = 100;
+                square.style.backgroundColor = '#f00';
+
+                square.onmouseover = function(){ //cria uma função de ação para quando passar o mouse em cima do objeto
+                    square.style.backgroundColor = getRandomColor(); //muda a cor de fundo
+                }  
+                containerElement.appendChild(square); //aqui add o elemento na DOM onde foi programado.
+                
+                
+
+            }
+
+                                 
+        
+        </script>
+    </body>
+</html>

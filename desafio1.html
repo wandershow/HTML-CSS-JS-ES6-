@@ -1,0 +1,36 @@
+// crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado vermelho com 100px de altura e largura.
+//sempre que o botão for clicacdo um novo deve aparecer na tela.
+
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Desafio 1</title>
+    </head>
+    <body>
+        <div id ="app">
+            <button class="botao">Adicionar</button>
+            
+        </div>
+        <script>
+           var btnElement = document.querySelector('button.botao');
+            //containerElement.appendChild(novoElemento);
+            
+            btnElement.onclick = function(){
+                var novoElemento = document.createElement('div');
+            novoElemento.setAttribute('box', 'caixa');
+            
+            
+            var containerElement = document.querySelector('#app');
+                containerElement.appendChild(novoElemento);
+                novoElemento.style.width = 100;
+                novoElemento.style.height = 100;
+                novoElemento.style.backgroundColor = '#f00';
+                novoElemento.style.borderWidth = 4;
+                
+                
+
+            }
+            
+        </script>
+    </body>
+</html>

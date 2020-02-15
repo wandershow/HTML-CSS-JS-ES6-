@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio4</title>
+</head>
+<body>
+            <input type="text" name="nome">
+            <button onclick="adicionar()" class="botao">Adicionar</button>
+            <ul> </ul>
+          
+ 
+
+    <Script>
+       
+        var nomes =["Diego", "Gabriel", "Lucas"];
+        var listaElement = document.querySelector('ul'); //listaElement referencia a tag 'ul'
+        var inputElement = document.querySelector('input'); //inputElement referencia a tag input
+
+        function addItem(texto){
+            var liElement = document.createElement('li'); //cria um elemento 'li'
+            var textElement = document.createTextNode(texto); //cria um elemento de texto que esta vindo do metedo adicionar
+
+            liElement.appendChild(textElement);  //adiciona o elemento de texto criado a 'li'
+            listaElement.appendChild(liElement); //adiciona a 'li' na tabela 'ul'
+        }
+
+
+        function adicionar(){
+            addItem(inputElement.value); //repassa para a funçao addItem o valor digitado no campo input
+            inputElement.value = ""; //limpa o campo input
+        }
+       
+       for(nome of nomes){ //para cada nome em nomes
+           addItem(nome); //adiciona o nome 
+       }
+        
+
+        /*for (nome of nomes){ //para cada nome no vetor nomes
+            var liElement = document.createElement('li'); //cria uma linha na lista
+            var textElement = document.createTextNode(nome); //cria um texto com os nomes
+            liElement.appendChild(textElement); //add cada texto em cada linha criada
+            listaElement.appendChild(liElement); //add as linhas com texto na lista
+
+        }*/
+       
+        
+        
+       
+    </Script>
+</body>
+</html>

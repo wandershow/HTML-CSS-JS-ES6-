@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Manipulando com DOM</title>
+    </head>
+    <body>
+        <div id = "app">
+            <input type="text" name="nome" />
+            <button class="botao">Adicionar</button>
+        </div>
+        <script>
+
+            //var imputElement = document.getElementsByTagName('input'); //retorna um vetor de input
+            //var imputElement = document.getElementById('nome'); //retorna elementos por id
+            //var imputElement = document.getElementsByClassName('nome');
+            //var imputElement = document.querySelector('div#app input'); // vai buscar passando caminho do elemento que se quer
+            //console.log(imputElement);
+            
+            var inputElement = document.querySelector('input[name=nome]');
+            var btnElement = document.querySelector('button.botao');
+            
+            btnElement.onclick = function() {
+
+                var text = inputElement.value;
+                alert(text);
+            }
+        </script>
+    </body>
+</html>
